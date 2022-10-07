@@ -25,7 +25,7 @@ interface State {
 }
 
 describe('Fetching Pool Contract', function () {
-  it('Should create a pool', async function () {
+  it('Should fetch the last pair prices', async function () {
     const { pool, immutables, state } = await createPool()
     console.log('USDC/ETH: ', pool.token0Price.toSignificant(6))
     console.log('ETH/USDC: ', pool.token1Price.toSignificant(6))
@@ -34,9 +34,9 @@ describe('Fetching Pool Contract', function () {
 })
 
 async function getPoolContract() {
-  const signer = await ethers.getImpersonatedSigner(
-    '0x10bf1Dcb5ab7860baB1C3320163C6dddf8DCC0e4',
-  )
+  // const signer = await ethers.getImpersonatedSigner(
+  //   '0x10bf1Dcb5ab7860baB1C3320163C6dddf8DCC0e4',
+  // )
 
   const poolAddress = '0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8'
 
